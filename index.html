@@ -1,0 +1,256 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Page - Hero, Work & Chart</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Google Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: #b38ce5;
+      color: white;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+      position: relative;
+      flex-wrap: wrap;
+    }
+    .hero-content { flex: 1 1 500px; z-index: 2; }
+    .hero-heading { font-size: 3rem; font-weight: 700; line-height: 1.2; }
+    .hero-subtext { font-size: 1.1rem; color: #eaeaea; margin-top: 20px; line-height: 1.6; }
+    .btn-custom {
+      margin-top: 30px; padding: 12px 28px;
+      background: linear-gradient(to right, #fcfcfc, #f5f5f5);
+      color: #000; font-weight: 600; border-radius: 50px; border: none;
+      cursor: pointer; transition: all 0.4s ease-in-out; display: inline-flex;
+      align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2); background-size: 200% auto;
+    }
+    .btn-custom .material-icons { font-size: 20px; margin-left: 8px; transition: transform 0.3s ease-in-out; }
+    .btn-custom:hover { background-image: linear-gradient(to right, #5c94b4, #ffffff); transform: scale(1.05); }
+    .btn-custom:hover .material-icons { transform: translateX(5px); }
+    .hero-image { flex: 1 1 400px; display: flex; justify-content: center; align-items: center; margin-top: 0; }
+    .hero-image img { border-radius: 50%; width: 350px; height: 350px; object-fit: cover; }
+
+    /* Card Section */
+    .card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card:hover { transform: scale(0.95); box-shadow: 0 12px 24px rgba(165,110,231,0.2); }
+
+    /* Flow Chart Section */
+    .flow-step {
+      background: #e9f5fb; color: #0d3c55; padding: 12px 20px;
+      border-radius: 8px; font-weight: 600; text-align: center; margin-bottom: 15px;
+    }
+    .arrow-down { text-align: center; font-size: 1.5rem; margin-bottom: 15px; color: #0d3c55; }
+    #chart-container { height: 300px; }
+
+    /* Responsive */
+    @media (max-width: 1024px) { .hero-heading { font-size: 2.5rem; } }
+    @media (max-width: 480px) {
+      .hero-section { flex-direction: column; text-align: center; }
+      .hero-content { order: 1; }
+      .hero-image { order: 2; margin-top: 40px; }
+      .hero-heading { font-size: 1.7rem; }
+      .hero-subtext { font-size: 1rem; }
+      .hero-image img { width: 220px; height: 220px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-heading">
+        Unlock Cellular Energy with <br> ChronoNAD+
+      </h1>
+      <p class="hero-subtext">
+        Support healthy aging and vitality at the cellular level.<br> 
+        ChronoNAD+ by CellStart is scientifically designed to boost NAD+ levels,<br> 
+        helping your body power through every stage of life.
+      </p>
+      <button class="btn-custom">
+        Shop now <span class="material-icons">arrow_forward</span>
+      </button>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.pexels.com/photos/5038836/pexels-photo-5038836.jpeg" alt="Hero Image">
+    </div>
+  </section>
+
+  <!-- My Work Section -->
+  <section class="py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-5">Why NAD+ is your Cellular Fuel</h2>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="card border rounded shadow-sm overflow-hidden h-100">
+            <img src="https://images.pexels.com/photos/9016962/pexels-photo-9016962.jpeg"
+                 alt="Innovation" class="w-100" style="height:200px; object-fit:cover;">
+            <div class="p-4">
+              <h5 class="fw-bold mb-2 text-dark">Energy Production</h5>
+              <p class="mb-0 text-dark">NAD+ is a key driver of metabolism, helping your body turn food into usable energy for ebery cell.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card border rounded shadow-sm overflow-hidden h-100">
+            <img src="https://images.pexels.com/photos/18069424/pexels-photo-18069424.png"
+                 alt="Customer Focus" class="w-100" style="height:200px; object-fit:cover;">
+            <div class="p-4">
+              <h5 class="fw-bold mb-2 text-dark">DNA Repair</h5>
+              <p class="mb-0 text-dark">It helps power your body,s natural processes to fix damaged DNA and keep your cells healthy.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card border rounded shadow-sm overflow-hidden h-100">
+            <img src="https://images.pexels.com/photos/25626515/pexels-photo-25626515.jpeg"
+                 alt="Reliable Quality" class="w-100" style="height:200px; object-fit:cover;">
+            <div class="p-4">
+              <h5 class="fw-bold mb-2 text-dark">Cellular Defense</h5>
+              <p class="mb-0 text-dark">NAD+ activities important "longevity grnes" that help your body fight off stress and maintain overall cellular wellness.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Animated Chart & Flow Section -->
+  <section class="py-5">
+    <div class="container py-5">
+      <h3 class="text-center mb-4">Additional Animated Content</h3>
+      <div class="row align-items-start">
+        <div class="col-md-6 mb-4">
+          <h5 class="text-center fw-bold">Increase in NAD+ in Key Tissues*</h5>
+          <div id="chart-container">
+            <canvas id="barChart"></canvas>
+          </div>
+          <p class="text-center small text-muted mt-2">Source: Jiang et al., Pharmacology Research & Perspectives, 2022</p>
+        </div>
+        <div class="col-md-6">
+          <h5 class="text-center fw-bold mb-4">How They Work Together</h5>
+          <div class="flow-step">Resveratrol</div>
+          <div class="arrow-down">↓</div>
+          <div class="flow-step">Activates "Longevity" Genes*</div>
+          <div class="arrow-down">↓</div>
+          <div class="flow-step">Boosts NAD+’s Function*</div>
+          <div class="arrow-down">↓</div>
+          <div class="flow-step">Enhanced Cellular Health & Defense*</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const ctx = document.getElementById('barChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['NAD+ Alone', 'NAD+ with Resveratrol'],
+        datasets: [{
+          label: 'Increase (%)',
+          data: [100, 180],
+          backgroundColor: ['#4e79a7', '#76b7b2'],
+          borderRadius: 8
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          y: { beginAtZero: true, max: 200, ticks: { stepSize: 20, callback: value => value + '%' } }
+        },
+        animation: { duration: 2000, easing: 'easeOutCubic' }
+      }
+    });
+  </script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Section</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .product-section {
+      background-color: #f5f9fc; /* light background like your design */
+      padding: 60px 0;
+    }
+    .product-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    .product-desc h5 {
+      font-weight: 700;
+    }
+    .product-desc p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .product-img img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+<section class="product-section">
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <!-- Left Content -->
+      <div class="col-lg-7 col-md-12 mb-4 mb-lg-0">
+        <h3 class="product-title">Main product, <span class="text-primary">ChronoNAD+</span>:</h3>
+        <div class="product-desc mt-3">
+          <h5>Product Description:</h5>
+          <p>
+            ChronoNAD+ is a dietary supplement taken once a day. 
+            As we age, our NAD+ levels decline, impacting our cellular health and energy. 
+            Our supplement is designed to restore these levels, helping you feel more vibrant and energized.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Image -->
+      <div class="col-lg-5 col-md-12 text-center product-img">
+        <img src="https://i.ibb.co/hR9Zc0x/bottle.png" alt="ChronoNAD+ Bottle" class="img-fluid">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
